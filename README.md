@@ -1,4 +1,4 @@
-Basic react-redux build
+GitHub search app
 
 to start:
 

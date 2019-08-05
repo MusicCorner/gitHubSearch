@@ -1,2 +1,2 @@
-const MAIN_URL = 'http://mainUrl.test';
-export const SOME_URL = `${MAIN_URL}/someUrlTest`;
+const MAIN_URL = 'http://api.github.com/search/repositories?q';
+export const GET_SEARCH_URL = (inputValue) => `${MAIN_URL}=${inputValue}`;

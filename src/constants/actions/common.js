@@ -1,3 +1,3 @@
 export const COMMON_ACTIONS = {
-	TOGGLE_DEFAULT_ERROR: 'toggle default error',
+	TOGGLE_DEFAULT_ERROR: 'TOGGLE_DEFAULT_ERROR',
 };

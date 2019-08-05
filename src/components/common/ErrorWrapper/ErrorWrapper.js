@@ -7,7 +7,7 @@ const ErrorWrapper = (props) => {
 	const { error, toggleErrorModal } = props;
 	return (
 		<>
-			<MainComponent />
+			<MainComponent {...props}/>
 			<ErrorModal
 				error={error}
 				toggleErrorModal={toggleErrorModal}

@@ -1,8 +1,8 @@
-import { SOME_URL } from '../constants/urls/urls';
+import { GET_SEARCH_URL } from '../constants/urls/urls';
 
 export const MainApi = {
-	fetchSomething: () => (
-		fetch(SOME_URL).then(response => response.json())
+	fetchSearchResults: (inputValue) => (
+		fetch(GET_SEARCH_URL(inputValue)).then(response => response.json())
 			.then(data => data)
 			.catch(e => e)
 	),
