@@ -1,9 +1,17 @@
 .resultsContainer {
-	margin: 0 auto;
-	margin-top: 61px;
 	overflow: auto;
-	padding: 0 10%;
-	height: 84%;
+	display: flex;
+	justify-content: center;
+	height: calc(100% - 175px);
+}
+
+.resultsContainer > div {
+	width: 75%;
+}
+
+.resultsCountContainer {
+	width: 75%;
+	margin: 0 auto;
 }
 
 .resultsCount {
@@ -16,7 +24,7 @@
 	border-radius: 5px;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	position: absolute;
+	/* position: absolute; */
 	left: 10%;
 	margin-top: 20px;
 }

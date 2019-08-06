@@ -26,11 +26,15 @@ const ResultsComponent = (props) => {
 
 	return (
 		<>
-			<div className={styles.resultsCount}>
-				{total_count} results:
+			<div className={styles.resultsCountContainer}>
+				<div className={styles.resultsCount}>
+					{total_count} results
+				</div>
 			</div>
 			<div className={styles.resultsContainer}>
-				{mappedResults}
+				<div>
+					{mappedResults}
+				</div>
 			</div>
 		</>
 	);
