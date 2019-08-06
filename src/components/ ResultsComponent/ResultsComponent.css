@@ -1,3 +1,22 @@
 .resultsContainer {
-	
+	margin: 0 auto;
+	margin-top: 61px;
+	overflow: auto;
+	padding: 0 10%;
+	height: 84%;
+}
+
+.resultsCount {
+	color: white;
+	font-size: 18px;
+	font-weight: 700;
+	width: fit-content;
+	padding: 7px 17px;
+	background: #0000006b;
+	border-radius: 5px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	position: absolute;
+	left: 10%;
+	margin-top: 20px;
 }

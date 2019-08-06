@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ResultItem from './ResultItem/ResultItem';
@@ -8,6 +9,7 @@ const ResultsComponent = (props) => {
 	const { searchState } = props;
 	const { results } = searchState;
 	const { isPending, data } = results;
+	const { items, total_count } = data;
 	if (isPending) {
 		return (
 			<Loader />
@@ -18,14 +20,19 @@ const ResultsComponent = (props) => {
 		return null;
 	}
 
-	const mappedResults = (data.items.map(resultItem => (
+	const mappedResults = (items.map(resultItem => (
 		<ResultItem key={resultItem.id} result={resultItem} />
 	)));
 
 	return (
-		<div className={styles.resultsContainer}>
-			{mappedResults}
-		</div>
+		<>
+			<div className={styles.resultsCount}>
+				{total_count} results:
+			</div>
+			<div className={styles.resultsContainer}>
+				{mappedResults}
+			</div>
+		</>
 	);
 };
 

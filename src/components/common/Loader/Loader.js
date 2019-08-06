@@ -1,8 +1,8 @@
 import React from 'react';
-import './Loader.css';
+import styles from './Loader.css';
 
 const Loader = () => (
-	<div className="lds-dual-ring" />
+	<div className={styles.ldsDualRing} />
 );
 
 export default Loader;

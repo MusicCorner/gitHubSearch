@@ -1,3 +1,29 @@
 .resultItemContainer {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background: #ffffff47;
+	margin-bottom: 6px;
+	color: white;
+	border: 1px solid #ffffffab;
+	border-radius: 5px;
 
+	.resultItemColumn {
+		display: flex;
+	}
+	
+	.resultInfoItem {
+		display: flex;
+		align-items: center;
+		width: 88px;
+		justify-content: flex-end;
+	}
+	
+	.resultInfoItem:first-child {
+		margin-right: 5px;
+	}
+	
+	.resultInfoItem > span {
+		margin-right: 3px;
+	}
 }
