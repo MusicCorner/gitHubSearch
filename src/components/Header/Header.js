@@ -1,8 +1,14 @@
+// @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Header.css';
 
-const Header = (props) => {
+type Props = {
+	title: String,
+};
+
+const Header = (props: Props) => {
 	const { title } = props;
 
 	return (

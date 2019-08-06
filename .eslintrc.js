@@ -6,7 +6,7 @@
 
 module.exports = {
   root: true,
-  plugins: ["react"],
+  plugins: ["react", "flowtype"],
   parser: "babel-eslint",
   parserOptions: {
     ecmaFeatures: {
