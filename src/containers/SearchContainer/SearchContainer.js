@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeSearchInputValue, fetchSearchRequest } from '../../actions/search/searchAction';
+import { changeSearchInputValue, fetchSearchRequest, clearSearchResults } from '../../actions/search/searchAction';
 
 const SearchContainer = (Component) => {
 	class SearchComponent extends React.Component {
@@ -18,6 +18,7 @@ const SearchContainer = (Component) => {
 	const mapDispatchToProps = {
 		onChangeInputValue: changeSearchInputValue,
 		fetchSearch: fetchSearchRequest,
+		clearSearchResults,
 	};
 
 	return connect(mapStateToProps, mapDispatchToProps)(SearchComponent);

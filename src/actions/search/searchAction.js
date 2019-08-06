@@ -14,3 +14,7 @@ export const fetchSearchSuccess = (payload) => ({
 	type: SEARCH_ACTIONS.FETCH_SEARCH_FULFILLED,
 	payload,
 });
+
+export const clearSearchResults = () => ({
+	type: SEARCH_ACTIONS.CLEAR_SEARCH_RESULTS,
+});

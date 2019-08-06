@@ -7,11 +7,18 @@ export default class SearchForm extends React.Component {
 		searchState: PropTypes.object.isRequired,
 		onChangeInputValue: PropTypes.func.isRequired,
 		fetchSearch: PropTypes.func.isRequired,
+		clearSearchResults: PropTypes.func.isRequired,
 	}
 
 	onChangeInputValue = (e) => {
-		const { onChangeInputValue, fetchSearch } = this.props;
+		const { onChangeInputValue, fetchSearch, clearSearchResults } = this.props;
 		const { value } = e.target;
+
+		if (value === '') {
+			clearSearchResults();
+			return;
+		}
+
 		onChangeInputValue(value);
 		fetchSearch(value);
 	}

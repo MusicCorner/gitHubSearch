@@ -38,6 +38,10 @@ const searchReducer = (state = initialState, action) => {
 					isPending: false,
 				},
 			});
+
+		case SEARCH_ACTIONS.CLEAR_SEARCH_RESULTS:
+			return initialState;
+
 		default:
 			return state;
 	}
