@@ -1,10 +1,17 @@
+// @flow
+
 import { call, put, takeLatest, delay } from 'redux-saga/effects';
+import type { IOEffect } from 'redux-saga/effects';
 import { MainApi } from '../api/MainApi';
 import { defaultErrorAction } from '../actions/common/defaultErrorAction';
 import { SEARCH_ACTIONS } from '../constants/actions/search';
 import { fetchSearchSuccess } from '../actions/search/searchAction';
 
-function* fetchSearch({ payload }) {
+type Props = {
+	payload: String
+};
+
+function* fetchSearch({ payload }: Props) {
 	yield delay(450);
 
 	try {
@@ -19,7 +26,7 @@ function* fetchSearch({ payload }) {
 	}
 }
 
-function* mainSagas() {
+function* mainSagas(): IOEffect {
 	yield takeLatest(SEARCH_ACTIONS.FETCH_SEARCH_REQUEST, fetchSearch);
 }
 

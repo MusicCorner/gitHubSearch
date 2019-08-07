@@ -1,15 +1,30 @@
+// @flow
+
 /* eslint-disable camelcase */
 import React from 'react';
-import PropTypes from 'prop-types';
 import ResultItem from './ResultItem/ResultItem';
 import styles from './ResultsComponent.css';
 import Loader from '../common/Loader/Loader';
 
-const ResultsComponent = (props) => {
+type ResultItemType = {
+	id: React$Key,
+	full_name: String,
+	svn_url: String,
+	stargazers_count: Number,
+	watchers_count: Number,
+};
+
+type DataType = { items: ResultItemType[], total_count: any };
+type ResultsType = { isPending: Boolean, data: DataType};
+type Props = { searchState: { results: ResultsType } };
+
+
+const ResultsComponent = (props: Props) => {
 	const { searchState } = props;
 	const { results } = searchState;
 	const { isPending, data } = results;
 	const { items, total_count } = data;
+
 	if (isPending) {
 		return (
 			<Loader />
@@ -20,7 +35,7 @@ const ResultsComponent = (props) => {
 		return null;
 	}
 
-	const mappedResults = (items.map(resultItem => (
+	const mappedResults = (items.map((resultItem: ResultItemType) => (
 		<ResultItem key={resultItem.id} result={resultItem} />
 	)));
 
@@ -38,10 +53,6 @@ const ResultsComponent = (props) => {
 			</div>
 		</>
 	);
-};
-
-ResultsComponent.propTypes = {
-	searchState: PropTypes.object.isRequired,
 };
 
 export default ResultsComponent;

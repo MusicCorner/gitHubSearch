@@ -1,10 +1,17 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import MainComponent from '../../MainComponent/MainComponent';
 
-const ErrorWrapper = (props) => {
+type Props = {
+	error: { message: String },
+	toggleErrorModal: () => null,
+};
+
+const ErrorWrapper = (props: Props) => {
 	const { error, toggleErrorModal } = props;
+
 	return (
 		<>
 			<MainComponent {...props}/>
@@ -14,11 +21,6 @@ const ErrorWrapper = (props) => {
 			/>
 		</>
 	);
-};
-
-ErrorWrapper.propTypes = {
-	error: PropTypes.object,
-	toggleErrorModal: PropTypes.func.isRequired,
 };
 
 export default ErrorWrapper;

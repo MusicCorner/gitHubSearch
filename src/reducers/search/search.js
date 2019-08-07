@@ -1,4 +1,17 @@
+// @flow
+
 import { SEARCH_ACTIONS } from '../../constants/actions/search';
+import Action from '../../types/reduxDefaultTypes';
+
+type Input = { value: ?String | '' };
+type Results = {
+	isPending: boolean,
+	data: { [key: any]: any },
+};
+type State = {
+	input: Input,
+	results: Results,
+};
 
 const initialState = {
 	input: {
@@ -10,7 +23,7 @@ const initialState = {
 	},
 };
 
-const searchReducer = (state = initialState, action) => {
+const searchReducer = (state: State = initialState, action: Action) => {
 	const { type, payload } = action;
 
 	switch (type) {

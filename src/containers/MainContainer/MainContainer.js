@@ -1,8 +1,13 @@
+// @flow
+
 import { connect } from 'react-redux';
 import { defaultErrorAction } from '../../actions/common/defaultErrorAction';
 import ErrorWrapper from '../../components/common/ErrorWrapper/ErrorWrapper';
 
-const mapStateToProps = (state) => ({
+type Common = { error: String };
+type State = { common: Common };
+
+const mapStateToProps = (state: State) => ({
 	error: state.common.error,
 });
 

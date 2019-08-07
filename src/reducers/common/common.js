@@ -1,10 +1,17 @@
+// @flow
+
 import { COMMON_ACTIONS } from '../../constants/actions/common';
+import Action from '../../types/reduxDefaultTypes';
+
+type State = {
+	error: ?String,
+};
 
 const initialState = {
 	error: null,
 };
 
-const commonReducer = (state = initialState, action) => {
+const commonReducer = (state: State = initialState, action: Action) => {
 	const { type, payload } = action;
 
 	switch (type) {

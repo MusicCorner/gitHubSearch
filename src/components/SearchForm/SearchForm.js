@@ -1,16 +1,18 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './SearchForm.css';
 
-export default class SearchForm extends React.Component {
-	static propTypes = {
-		searchState: PropTypes.object.isRequired,
-		onChangeInputValue: PropTypes.func.isRequired,
-		fetchSearch: PropTypes.func.isRequired,
-		clearSearchResults: PropTypes.func.isRequired,
-	}
+type InputType = { value: String };
+type Props = {
+	searchState: { input: InputType },
+	onChangeInputValue: (value: String) => null,
+	fetchSearch: (value: String) => null,
+	clearSearchResults: () => null,
+};
 
-	onChangeInputValue = (e) => {
+export default class SearchForm extends React.Component<Props> {
+	onChangeInputValue = (e: { target: InputType }) => {
 		const { onChangeInputValue, fetchSearch, clearSearchResults } = this.props;
 		const { value } = e.target;
 
@@ -20,7 +22,10 @@ export default class SearchForm extends React.Component {
 		}
 
 		onChangeInputValue(value);
-		fetchSearch(value);
+
+		if (value.length > 2) {
+			fetchSearch(value);
+		}
 	}
 
 	render() {

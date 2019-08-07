@@ -1,11 +1,19 @@
+//  @flow
+
 /* eslint-disable camelcase */
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './ResultItem.css';
 import WatchersIcon from '../../common/Icons/WatchersIcon';
 import StarIcon from '../../common/Icons/StarIcon';
 
-const ResultItem = (props) => {
+type Result = {
+	full_name: any,
+	svn_url: String,
+	stargazers_count: any,
+	watchers_count: any,
+};
+
+const ResultItem = (props: { result: Result }) => {
 	const { result } = props;
 	const { full_name, svn_url, stargazers_count, watchers_count } = result;
 
@@ -28,10 +36,6 @@ const ResultItem = (props) => {
 			</div>
 		</div>
 	);
-};
-
-ResultItem.propTypes = {
-	result: PropTypes.object.isRequired,
 };
 
 export default ResultItem;

@@ -38,6 +38,6 @@ module.exports = {
       "ImportDeclaration": "never",
       "ExportDeclaration": { "multiline": true, "minProperties": 3 }
     }],
-    "react/prop-types": [2],
+    "react/prop-types": [0],
   }
 };

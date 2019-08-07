@@ -1,31 +1,25 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 
-export default class ErrorModal extends React.Component {
-	static propTypes = {
-		toggleErrorModal: PropTypes.func.isRequired,
-		error: PropTypes.object,
-	}
 
+type Props = {
+	toggleErrorModal: () => null,
+	error: { message: String },
+};
+
+export default class ErrorModal extends React.Component<Props> {
 	handleClose = () => {
 		const { toggleErrorModal } = this.props;
 		toggleErrorModal();
 	}
 
-	getAllErrorMessages = (message) => {
-		return Object.keys(message).map(key => (
-			<React.Fragment key={key}>
-				{key}: {message[key]}
-			</React.Fragment>
-		));
-	}
-
 	render() {
 		const { error } = this.props;
-		const errorMessage = error && error.message && typeof error.message === 'string'
-			? error.message : error && error.message && this.getAllErrorMessages(error.message);
-		return error && (
+		const errorMessage = error && error.message;
+
+		return errorMessage && (
 			<Modal show={!!error} onHide={this.handleClose}>
 				<Modal.Header closeButton>
 					<Modal.Title>Error</Modal.Title>

@@ -1,9 +1,17 @@
+// @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeSearchInputValue, fetchSearchRequest, clearSearchResults } from '../../actions/search/searchAction';
 
-const SearchContainer = (Component) => {
-	class SearchComponent extends React.Component {
+type State = {
+	search: { [key: String]: any }
+}
+
+type Props = { [key: any]: any };
+
+const SearchContainer = (Component: any) => {
+	class SearchComponent extends React.Component<Props> {
 		render() {
 			return (
 				<Component {...this.props} />
@@ -11,7 +19,7 @@ const SearchContainer = (Component) => {
 		}
 	}
 
-	const mapStateToProps = (state) => ({
+	const mapStateToProps = (state: State) => ({
 		searchState: state.search,
 	});
 
